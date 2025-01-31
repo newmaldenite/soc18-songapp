@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { data } from '../../data/data';
 import AddSongForm from "../Form/Form";
-import VideoPlayerCard from "../VideoPlayer/VideoPlayer";
+import VideoPlayerCard from "../VideoPlayer/videoplayer";
 import SongList from "../SongList/SongList";
 
 function Main() {
