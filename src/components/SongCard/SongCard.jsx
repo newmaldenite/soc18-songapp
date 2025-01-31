@@ -1,11 +1,7 @@
 import './SongCard.css';
 
 function SongCard({ video, handleClickSongCard, i }) {
-    // function handleClickSongCard(e) {
-    //     // setCurrentVideo(e.target.key);
-    //     alert('clicked');
-    //   }
-    
+
     return (
         <div className="song-card" onClick={() => handleClickSongCard(i)}>
             <p className='title'>{video.title}</p>

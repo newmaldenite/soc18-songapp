@@ -52,7 +52,7 @@ function SongList({ videos, handleClickSongCard }) {
           <div className={styles.images}>
             {displayedCards.map((video, i) => (
               <SongCard
-              i={i} 
+              i={currentIndex + i} 
               handleClickSongCard={handleClickSongCard} 
               video={video}
               />
