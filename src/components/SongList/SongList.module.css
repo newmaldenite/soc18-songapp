@@ -1,0 +1,55 @@
+/* .song-list {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+} */
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .arrowLeft,
+  .arrowRight {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(32, 30, 29);
+  }
+  
+  .images {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .images > div {
+    flex: 1;
+  }
+  
+  .shuffle {
+    background-color: #2e6fd1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .shuffle:hover {
+    background-color: #04357e;
+  }
+  
+  .shuffle:active {
+    background-color: #022a5e;
+  }
+  
