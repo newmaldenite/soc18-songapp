@@ -18,11 +18,11 @@
         margin: 0;
     }
     .title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 500;
     }
     .artist {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 400;
     }
     .message {
