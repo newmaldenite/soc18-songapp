@@ -2,11 +2,11 @@
 export const data = [
     {
         id: 1,
-        artist: '',
-        title: 'Pick a random song for me!',
-        url: '',
-        username: '',
-        message: 'I\'m feeling lucky!',
+        artist: 'Beastie Boys',
+        title: 'Sabotage',
+        url: 'https://www.youtube.com/watch?v=2WHFTRArC44',
+        username: '??',
+        message: 'Got to tell y\'all...',
     },
     {
         id: 2,

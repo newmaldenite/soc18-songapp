@@ -25,9 +25,9 @@ function Main() {
 
   return (
     <main>
-      <AddSongForm videos={videos} setVideos={setVideos}/> 
-      <VideoPlayerCard currentVideo={videos[currentVideo]} />
+      <AddSongForm videos={videos} setVideos={setVideos}/>
       <SongList handleClickSongCard={handleClickSongCard} videos={videos} />
+      <VideoPlayerCard currentVideo={videos[currentVideo]} />
     </main>
   );
 }

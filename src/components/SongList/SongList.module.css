@@ -1,55 +1,84 @@
-/* .song-list {
-    max-width: 1280px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-    justify-content: center;
-} */
+.container {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
 
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-  }
-  
-  .arrowLeft,
-  .arrowRight {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: rgb(32, 30, 29);
-  }
-  
-  .images {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .images > div {
-    flex: 1;
-  }
-  
-  .shuffle {
-    background-color: #2e6fd1;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-  }
-  
-  .shuffle:hover {
-    background-color: #04357e;
-  }
-  
-  .shuffle:active {
-    background-color: #022a5e;
-  }
-  
+.progressWrapper {
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.progress {
+  transform: rotate(-90deg);
+}
+
+.bg {
+  stroke: #e0e0e0;
+  stroke-width: 5;
+  fill: none;
+}
+
+.indicator {
+  stroke: #ff4500; /* Highlight color */
+  stroke-width: 5;
+  fill: none;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+.scrollContainer {
+  max-width: 600px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f5f5f5;
+  margin-bottom: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.scrollContent {
+  display: flex;
+  list-style: none;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.scrollContent li {
+  flex: 0 0 200px;
+  width: 200px; 
+  height: 200px;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Ensures long words break properly */
+  overflow: hidden; /* Prevents content spillover */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 8px; /* Optional: adds rounded corners */
+
+    background-color: white; /* Ensure the background is white */
+}
+
+.scrollContent li:hover {
+  transform: scale(1.05);
+}
+
+button {
+  margin-bottom: 20px;
+}
