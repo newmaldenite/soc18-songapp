@@ -20,11 +20,26 @@ export default function AddSongForm({ videos, setVideos }) {
         setForm({ ...form, [e.target.name]: e.target.value });
       }
     
+    function validateForm() {
+        return (
+          form.artist.trim() !== "" &&
+          form.title.trim() !== "" &&
+          form.url.trim() !== "" &&
+          form.message.trim() !== "" &&
+          form.username.trim() !== ""
+        );
+      }
+
     async function handleSubmit(e) {
         // Prevent the browser from reloading the page
         e.preventDefault();
         setError(null);
 
+      if (!validateForm()) {
+          setError("Please fill in all fields before submitting");
+          return;
+        }
+    
         try {
           const newSong = await postVideo(form);
           // Update local state with the response from Supabase
@@ -42,6 +57,8 @@ export default function AddSongForm({ videos, setVideos }) {
     // setForm({ artist: "", title: "", url: "", message: "", username: "" }); // Reset form
   }
       
+  const isFormValid = validateForm();
+
   return (
     <Box
       component="form"
@@ -57,7 +74,6 @@ export default function AddSongForm({ videos, setVideos }) {
     >
       <div>
         <TextField
-          required
           id="username"
           name="username" // ✅ Add name
           label="Your name"
@@ -88,7 +104,6 @@ export default function AddSongForm({ videos, setVideos }) {
         />
         
         <TextField
-          required
           id="url"
           name="url"
           label="YouTube URL"
@@ -147,8 +162,18 @@ export default function AddSongForm({ videos, setVideos }) {
 
         />
       </div> */}
+      {!isFormValid && (
+        <div style={{ color: 'primary', margin: '10px 0', textAlign: 'center' }}>
+          All fields must be filled
+        </div>
+      )}
       {error && <div style={{ color: 'red', margin: '10px' }}>{error}</div>}
-      <Button type="submit" variant="contained" sx={{ mt: 2 }}>
+      <Button 
+        type="submit" 
+        variant="contained" 
+        sx={{ mt: 2 }}
+        disabled={!validateForm()}
+        >
         Add Song
       </Button>
 
