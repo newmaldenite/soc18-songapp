@@ -1,27 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { data } from '../../data/data';
 import AddSongForm from "../Form/Form";
 import VideoPlayerCard from "../VideoPlayer/videoplayer";
 import SongList from "../SongList/SongList";
+import { getVideos } from '../Helper/supabaseClient';
 
 function Main() {
   // initialise state of videos with data imported from data.js
-  const [ videos, setVideos ] = useState(data);
+  const [ videos, setVideos ] = useState([]);
   // initialise state of currently selected video
   const [ currentVideo, setCurrentVideo ] = useState(null);
 
   function handleClickSongCard(e) {
-    // e.preventDefault();
-    // console.log(`before random: ${e}`);
-    // if (e === 0) {
-    //   let randomSongIndex = Math.floor(Math.random() * (videos.length - 1)) + 1;
-    //   setCurrentVideo(randomSongIndex);
-    //   console.log(`random index: ${randomSongIndex}`);
-    //   return;
-    // }
-    // console.log(`after random: ${e}`);
     setCurrentVideo(e);
   }  
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const data = await getVideos();
+        setVideos(data);
+      } catch (err) {
+        console.error('Error loading videos:', err);
+      }
+    };
+    fetchVideos();
+  }, []);
 
   return (
     <main>

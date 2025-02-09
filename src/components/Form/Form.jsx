@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { postVideo } from '../Helper/supabaseClient';
 
 export default function AddSongForm({ videos, setVideos }) {
     const [form, setForm] = useState({
@@ -13,19 +14,32 @@ export default function AddSongForm({ videos, setVideos }) {
         username: "",
       });
     
-      function handleChange(e) {
+    const [error, setError] = useState(null);
+
+    function handleChange(e) {
         setForm({ ...form, [e.target.name]: e.target.value });
       }
     
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         // Prevent the browser from reloading the page
         e.preventDefault();
-        console.log(form);
-        const newSong = { id: videos.length + 1, ...form }; // 
-        console.log(newSong);
-    // onAddSong(newSong); - wasn't sure what this line was for?
-    setVideos(prevVideos => [...prevVideos, newSong]); // add the newSong to videos, also changed it to a functional update 
-    setForm({ artist: "", title: "", url: "", message: "", username: "" }); // Reset form
+        setError(null);
+
+        try {
+          const newSong = await postVideo(form);
+          // Update local state with the response from Supabase
+          setVideos(prevVideos => [...prevVideos, newSong]);
+          setForm({ artist: "", title: "", url: "", message: "", username: "" });
+        } catch (err) {
+          console.error('Submission error:', err);
+          setError('Failed to submit song. Please try again.');
+        }
+        // old version below
+    //     console.log(form);
+    //     const newSong = { id: videos.length + 1, ...form }; // 
+    //     console.log(newSong);
+    // setVideos(prevVideos => [...prevVideos, newSong]); // add the newSong to videos, also changed it to a functional update 
+    // setForm({ artist: "", title: "", url: "", message: "", username: "" }); // Reset form
   }
       
   return (
@@ -133,6 +147,7 @@ export default function AddSongForm({ videos, setVideos }) {
 
         />
       </div> */}
+      {error && <div style={{ color: 'red', margin: '10px' }}>{error}</div>}
       <Button type="submit" variant="contained" sx={{ mt: 2 }}>
         Add Song
       </Button>
