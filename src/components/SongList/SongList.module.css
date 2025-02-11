@@ -24,7 +24,7 @@
 }
 
 .indicator {
-  stroke: #ff4500; /* Highlight color */
+  stroke: #6a70e0; /* Highlight color */
   stroke-width: 5;
   fill: none;
   transition: stroke-dashoffset 0.2s ease;

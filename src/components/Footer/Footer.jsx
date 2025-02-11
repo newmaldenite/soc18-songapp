@@ -9,9 +9,16 @@ export default function Footer () {
             </a>
         );
     }
+    function MotionLogo() {
+        return (
+            <a href="https://motion.dev/" target="_blank">
+                <img src="https://user-images.githubusercontent.com/7850794/164965509-2a8dc49e-2ed7-4243-a2c9-481b03bbc31a.png" className="logo motion" alt="Motion logo" />
+            </a>
+        );
+    }
     return (
         <footer> 
-            <p>🎵 Built with React <ReactLogo /> by Team CNZ 🎵</p>
+            <p>🎵 Built with React <ReactLogo /> and Motion <MotionLogo/> by Team CNZ 🎵</p>
         </footer>
     );
 }
