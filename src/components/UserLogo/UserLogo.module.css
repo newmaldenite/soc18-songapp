@@ -1,0 +1,42 @@
+.userLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .userInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .logoutButton {
+    color: #000000; /* Ensure text color is black */
+    background-color: #fff; /* Ensure background color is white */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 16px; /* Increase font size */
+    margin-left: 10px; /* Adjust to your layout needs */
+  }
+  
+  .loginLink {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .loginLink:hover {
+    text-decoration: underline;
+  }
+  

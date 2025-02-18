@@ -55,3 +55,37 @@ main {
 .read-the-docs {
   color: #888;
 }
+
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-in-container button {
+  color: #000000; /* Ensure text color is black */
+  background-color: #fff; /* Ensure background color is white */
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  padding: 10px 20px; /* Add some padding */
+  font-size: 16px; /* Increase font size */
+}
+
+.user-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container .auth {
+  width: 400px; /* Constrain the width */
+  max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+}
