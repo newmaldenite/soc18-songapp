@@ -24,3 +24,5 @@ export const postVideo = async (formData) => {
   if (error) throw error;
   return data[0];
 };
+
+export default supabase;
