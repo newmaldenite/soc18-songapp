@@ -6,6 +6,8 @@ const supabase = createClient(
   import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
+export { supabase };
+
 export const getVideos = async () => {
   const { data, error } = await supabase
     .from('videos')

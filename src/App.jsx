@@ -4,7 +4,7 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import UserLogo from './components/UserLogo/UserLogo';
 import { useState, useEffect } from 'react'
-import supabase from '../Helper/supabaseClient';
+import { supabase } from './components/Helper/supabaseClient'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
