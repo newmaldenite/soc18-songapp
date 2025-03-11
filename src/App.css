@@ -69,3 +69,24 @@ main {
 .auth {
   width: 100%; /* Ensure the Auth component takes the full width of the container */
 }
+
+@media (max-width: 600px) {
+  body {
+    max-width: 100%; /* Ensure the body takes the full width of the viewport */
+    padding: 10px; /* Add padding for better spacing on mobile */
+  }
+
+  .site-container {
+    width: 90%; /* Limit the width of the site container */
+    margin: 0 auto; /* Center the container */
+  }
+
+  /* Adjust other elements as needed */
+  .header, .footer {
+    text-align: center; /* Center text in header and footer */
+  }
+
+  .main-content {
+    font-size: 16px; /* Adjust font size for better readability */
+  }
+}

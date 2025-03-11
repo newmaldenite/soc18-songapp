@@ -7,18 +7,23 @@ const UserLogo = () => {
 
   useEffect(() => {
     const fetchProfilePicture = async () => {
-      const user = supabase.auth.user();
-      if (user) {
-        const { data, error } = await supabase
-          .from('profiles')
-          .select('avatar_url')
-          .eq('id', user.id)
-          .single();
+      // Updated authentication method
+      const { data: { user } } = await supabase.auth.getUser();
 
-        if (error) {
-          console.error('Error fetching profile picture:', error);
+      if (user) {
+
+        const githubAvatar = user.user_metadata?.avatar_url;
+
+        if (!githubAvatar) {
+          const { data, error } = await supabase
+            .from('profiles')
+            .select('avatar_url')
+            .eq('id', user.id)
+            .single();
+
+          if (!error) setProfilePictureUrl(data.avatar_url);
         } else {
-          setProfilePictureUrl(data.avatar_url);
+          setProfilePictureUrl(githubAvatar);
         }
       }
     };
