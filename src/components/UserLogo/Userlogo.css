@@ -43,7 +43,8 @@
   /* Dropdown Menu */
   .user-dropdown {
     position: absolute;
-    right: 0;
+    left: 50%;
+    transform: translateX(20px); 
     top: 100%;
     margin-top: 0.5rem;
     min-width: 192px;
