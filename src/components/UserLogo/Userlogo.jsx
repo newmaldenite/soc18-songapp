@@ -72,10 +72,10 @@ const UserLogo = () => {
   
       {isMenuOpen && (
         <div className="user-dropdown">
-          <div className="dropdown-header">
+          {/* <div className="dropdown-header">
             <p>Signed in as</p>
             <p className="user-email">{supabase.auth.user()?.email}</p>
-          </div>
+          </div> */}
           
           <button
             onClick={handleLogout}
