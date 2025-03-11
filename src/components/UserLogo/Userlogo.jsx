@@ -1,7 +1,7 @@
 // src/components/UserLogo/UserLogo.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import { supabase } from '../Helper/supabaseClient';
-import './UserLogo.css';
+import './Userlogo.css';
 
 const UserLogo = () => {
   const [profilePictureUrl, setProfilePictureUrl] = useState(null);
