@@ -55,3 +55,17 @@ main {
 .read-the-docs {
   color: #888;
 }
+
+/* App.css */
+.auth-container {
+  max-width: 500px; /* Adjust the width as needed */
+  margin: 50px auto; /* Center the container horizontally and add some vertical spacing */
+  padding: 20px; /* Add some padding inside the container */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Round the corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+.auth {
+  width: 100%; /* Ensure the Auth component takes the full width of the container */
+}
