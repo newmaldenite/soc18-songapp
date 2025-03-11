@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
-import UserLogo from './components/UserLogo/UserLogo';
+import UserLogo from './components/UserLogo/Userlogo';
 import { useState, useEffect } from 'react'
 import { supabase } from './components/Helper/supabaseClient'
 import { Auth } from '@supabase/auth-ui-react'
